@@ -16,8 +16,8 @@
     [string insertAttributedString:textAttachmentString atIndex:self.messageInputView.selectedRange.location + 1];
     [string insertAttributedString:nString atIndex:self.messageInputView.selectedRange.location + 2];
 ##选择好的照片保存到沙盒
-##//保存图片至沙盒
-###  - (void)saveImage:(UIImage *)tempImage WithName:(NSString *)imaName
+##保存图片至沙盒
+###   - (void)saveImage:(UIImage *)tempImage WithName:(NSString *)imaName
    {
      //压缩图片
     self.imageData = UIImageJPEGRepresentation(tempImage, 0.5);
@@ -35,7 +35,7 @@
     }
     
 ## 每次输入完处理输入的内容和图片
-###  -(void)setStyle
+### -(void)setStyle
    {
     //每次后拼装
       if (self.messageInputView.textStorage.length<self.location) {
@@ -62,16 +62,13 @@
    }
    
    
-   ##每次插入图片后，重新计算光标位置
-   ###   -(void)setInitLocation
-{
-    
-    
+ ##每次插入图片后，重新计算光标位置
+ ###   -(void)setInitLocation
+   {
     self.locationStr=nil;
     self.locationStr=[[NSMutableAttributedString alloc]initWithAttributedString:self.messageInputView.attributedText];
     self.messageInputView.font = [UIFont systemFontOfSize:20];
     self.messageInputView.textColor = [UIColor redColor];
     //重新设置位置
-    self.location=self.messageInputView.textStorage.length;
-    
-}
+    self.location=self.messageInputView.textStorage.length; 
+    }
