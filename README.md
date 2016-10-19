@@ -61,9 +61,8 @@
     self.location=self.messageInputView.textStorage.length;
    }
    
-   
- ##每次插入图片后，重新计算光标位置
- ###   -(void)setInitLocation
+##每次插入图片后，重新计算光标位置
+###-(void)setInitLocation
    {
     self.locationStr=nil;
     self.locationStr=[[NSMutableAttributedString alloc]initWithAttributedString:self.messageInputView.attributedText];
